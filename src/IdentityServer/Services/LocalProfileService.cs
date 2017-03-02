@@ -57,7 +57,8 @@ namespace IdentityServer.Services
                 new Claim(JwtClaimTypes.Id, user.Id.ToString(), ClaimValueTypes.String),
                 new Claim(JwtClaimTypes.PreferredUserName, user.UserName, ClaimValueTypes.String)
             };
-
+            // hard-code access to "chatapi.user"----normally this would come from a
+            // database!
             claims.Add(new Claim(JwtClaimTypes.Role, "chatapi.user"));
             claims.Add(new Claim(JwtClaimTypes.Scope, "chatapi"));
 
