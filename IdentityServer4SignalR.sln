@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "IdentityServer", "src\IdentityServer\IdentityServer.xproj", "{74894537-E514-4087-B6E1-B9D77A2ED34C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D50701EB-5066-4C6B-B8D9-86AD49A4B29D}"
+	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
+		docker-compose.production.yml = docker-compose.production.yml
+		docker-compose.yml = docker-compose.yml
+		global.json = global.json
+		README.md = README.md
+		runDocker.bat = runDocker.bat
+	EndProjectSection
+EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Web", "src\Web\Web.njsproj", "{BD437718-9CB1-4820-A89D-79D58C5495C5}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "ChatAPI", "src\ChatAPI\ChatAPI.xproj", "{69C5100A-A7F0-4597-8F1D-FFF0EAC7A74A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74894537-E514-4087-B6E1-B9D77A2ED34C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74894537-E514-4087-B6E1-B9D77A2ED34C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74894537-E514-4087-B6E1-B9D77A2ED34C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74894537-E514-4087-B6E1-B9D77A2ED34C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD437718-9CB1-4820-A89D-79D58C5495C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD437718-9CB1-4820-A89D-79D58C5495C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD437718-9CB1-4820-A89D-79D58C5495C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD437718-9CB1-4820-A89D-79D58C5495C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69C5100A-A7F0-4597-8F1D-FFF0EAC7A74A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69C5100A-A7F0-4597-8F1D-FFF0EAC7A74A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69C5100A-A7F0-4597-8F1D-FFF0EAC7A74A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69C5100A-A7F0-4597-8F1D-FFF0EAC7A74A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

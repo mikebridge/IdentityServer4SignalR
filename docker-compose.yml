@@ -1,0 +1,28 @@
+version: '2'
+
+services:
+#  identityserver:
+#    build: ./src/IdentityServer
+#    environment:
+#      - ASPNETCORE_ENVIRONMENT=Development
+#    ports:
+#      - "5004:5004"
+
+
+  chatapi:
+    build: ./src/ChatAPI
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "5000:5000"
+
+
+#  web:
+#    build: ./src/Web
+#    environment:
+#      - ASPNETCORE_ENVIRONMENT=Development
+#    ports:
+#      - "3000:3000"
+
+#    networks: 
+#    - front
