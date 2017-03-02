@@ -6,8 +6,8 @@ It will accompany [this future blog post](https://mikebridge.github.io/identitys
 
 ### Prerequisites:
 
-You can o run this just from the command line if you have Node and Dotnet Core installed,
-but otherwise you'll need VS2015 or greater:
+You can run this from the command line if you have Node and Dotnet Core installed,
+or you can use VS2015 or greater:
 
 - Install [Visual Studio 2015 Update 3](https://www.visualstudio.com/en-us/news/releasenotes/vs2015-update3-vs)
 and/or [DotNet Core 1.1](https://www.microsoft.com/net/download/core#/current).
