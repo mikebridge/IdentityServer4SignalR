@@ -1,12 +1,12 @@
 ## IdentityServer4 and SignalR
 
 This is an example of how to generate JWT tokens using 
-IdentityServer4 and use them in SignalR via a React Single Page App.  
-It accompanies [this blog post](https://mikebridge.github.io/identityserver4-signalr/).
+IdentityServer4 and use them to authenticate users in SignalR via a React/TypeScript Single Page App.  
+It will accompany [this future blog post](https://mikebridge.github.io/identityserver4-signalr/).
 
 ### Prerequisites:
 
-You should be able to run this just from the command line if you have Node and Dotnet Core installed,
+You can o run this just from the command line if you have Node and Dotnet Core installed,
 but otherwise you'll need VS2015 or greater:
 
 - Install [Visual Studio 2015 Update 3](https://www.visualstudio.com/en-us/news/releasenotes/vs2015-update3-vs)
@@ -16,20 +16,35 @@ and/or [DotNet Core 1.1](https://www.microsoft.com/net/download/core#/current).
 
 - Optionally install the [Node extension for Visual Studio](https://www.visualstudio.com/vs/node-js/)
 
-### Asymmetric Key Setup
+## Create and Install Asymmetric Keys
 
-...
-
-### Usage in Docker
+From the Developer Command Prompt:
 
 ```
-> runDocker.bat
-> docker-compose up
+> makecert -n "CN=ExampleTest" -a sha256 -sv ExampleTest.pvk -r ExampleTest.cer
+> pvk2pfx -pvk ExampleTest.pvk -spc ExampleTest.cer -pfx ExampleTest.pfx
 ```
 
-In a browser, navigate to [http://localhost:3000/](http://localhost:3000/).
+The pvk2pfx command combines the pvk and cer files into a single pfx file containing both the public and private 
+keys for the certificate. The IdentityServer4 app will use the private key from the pfx to sign tokens. Make sure to protect this file. 
+The .cer file can be shared with other services for the purpose of signature validation.
 
-### Usage from Command Line:
+To install asymmetric keys:
+
+1) Go to `Manage Computer Certificates` in Windows
+2) Under `Certificates - Local Computer => Personal => Certificates`, right click and select `All Tasks => Import...`
+3) Select `\testkeys\ExampleTest.pfx` and import it (there's no password).  You should see ExampleTest in the list.
+4) Under `Certificates - Local Computer => Trusted People => Certificates`, right click and select `All Tasks => Import...`
+5) Select `\testkeys\ExampleTest.cer` and import it (there's no password).
+
+If you want to verify generated JWT tokens yourself at [jwt.io](https://jwt.io/), you can translate the .pfx to 
+a .pem file:
+
+```bash
+openssl x509 -inform der -in ExampleTest.cer -pubkey -noout > ExampleTest_pub.pem
+```
+
+### Launch from Command Line:
 
 From one console:
 
@@ -56,3 +71,5 @@ And in a third console:
 ```
 
 In a browser, navigate to [http://localhost:3000/](http://localhost:3000/).
+
+The two test users are "lou" and "bud" with the password "password".
