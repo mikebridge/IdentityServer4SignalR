@@ -31,11 +31,11 @@ The .cer file can be shared with other services for the purpose of signature val
 
 To install asymmetric keys:
 
-1) Go to `Manage Computer Certificates` in Windows
-2) Under `Certificates - Local Computer => Personal => Certificates`, right click and select `All Tasks => Import...`
-3) Select `\testkeys\ExampleTest.pfx` and import it (there's no password).  You should see ExampleTest in the list.
-4) Under `Certificates - Local Computer => Trusted People => Certificates`, right click and select `All Tasks => Import...`
-5) Select `\testkeys\ExampleTest.cer` and import it (there's no password).
+1. Go to `Manage Computer Certificates` in Windows
+2. Under `Certificates - Local Computer => Personal => Certificates`, right click and select `All Tasks => Import...`
+3. Select `ExampleTest.pfx` and import it (there's no password).  You should see ExampleTest in the list.
+4. Under `Certificates - Local Computer => Trusted People => Certificates`, right click and select `All Tasks => Import...`
+5. Select `ExampleTest.cer` and import it (there's no password).
 
 If you want to verify generated JWT tokens yourself at [jwt.io](https://jwt.io/), you can translate the .pfx to 
 a .pem file:
