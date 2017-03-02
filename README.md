@@ -26,8 +26,8 @@ From the Developer Command Prompt:
 ```
 
 The pvk2pfx command combines the pvk and cer files into a single pfx file containing both the public and private 
-keys for the certificate. The IdentityServer4 app will use the private key from the pfx to sign tokens. Make sure to protect this file. 
-The .cer file can be shared with other services for the purpose of signature validation.
+keys for the certificate. The IdentityServer4 app will use the private key from the pfx to sign tokens. 
+The .cer file containing the public key can be shared with other services for the purpose of signature validation.
 
 To install asymmetric keys:
 
