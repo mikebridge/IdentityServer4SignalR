@@ -73,3 +73,7 @@ And in a third console:
 In a browser, navigate to [http://localhost:3000/](http://localhost:3000/).
 
 The two test users are "lou" and "bud" with the password "password".
+
+## TODO
+
+I have not been able to get a net461 app working in docker using a nanoserver image.  
