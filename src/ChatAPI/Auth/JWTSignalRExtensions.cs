@@ -22,29 +22,21 @@ namespace ChatAPI.Auth
                 {
                     try
                     {
-                        // seems to be a problem in signalr where having a header 
-                        // causes this to throw a 403.  It only happens
-                        // during CORS, so who knows.
-//                        if (context.Request.Path.Value.Contains("/signalr/send"))
-//                        {
-                            if (context.Request.QueryString.HasValue)
+                        if (context.Request.QueryString.HasValue)
+                        {
+
+                            var token = context.Request.QueryString.Value
+                                .Split('&')
+                                .SingleOrDefault(x => x.Contains(AUTH_QUERY_STRING_KEY))?
+                                .Split('=')
+                                .Drop(1)
+                                .First();
+
+                            if (!string.IsNullOrWhiteSpace(token))
                             {
+                                context.Request.Headers.Add("Authorization", new[] {$"Bearer {token}"});
+                            }
 
-                                var token = context.Request.QueryString.Value
-                                    .Split('&')
-                                    .SingleOrDefault(x => x.Contains(AUTH_QUERY_STRING_KEY))?
-                                    .Split('=')
-                                    .Drop(1)
-                                    .First();
-
-                                if (!string.IsNullOrWhiteSpace(token))
-                                {
-                                    context.Request.Headers.Add("Authorization", new[] { $"Bearer {token}" });
-                                    //                                    String result = Regex.Replace(context.Request.QueryString.ToString(), AUTH_QUERY_STRING_KEY +"=[^&]+&", "");
-                                    //                                    context.Request.QueryString = new QueryString(result);
-                                }
-
-                           // }
                         }
 
                     }

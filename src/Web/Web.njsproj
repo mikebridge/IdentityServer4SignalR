@@ -44,6 +44,8 @@
     <Folder Include="src\auth\" />
     <Folder Include="src\chat\" />
     <Folder Include="src\login\" />
+    <Folder Include="typings\" />
+    <Folder Include="typings\globals\" />
     <Folder Include="typings\globals\object-assign\" />
     <Folder Include="typings\globals\signalr\" />
     <Folder Include="typings\globals\webpack-dev-server\" />

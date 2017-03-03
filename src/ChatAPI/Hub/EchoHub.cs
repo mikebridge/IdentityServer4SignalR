@@ -11,7 +11,6 @@ using Microsoft.AspNet.SignalR.Owin;
 namespace ChatAPI.Hub
 {
     [Authorize(Roles = "chatapi.user")]
-
     public class EchoHub : Microsoft.AspNet.SignalR.Hub
     {
 
