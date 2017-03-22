@@ -2,7 +2,7 @@
 
 This is an example of how to generate JWT tokens using 
 IdentityServer4 and use them to authenticate users in SignalR via a React/TypeScript Single Page App.  
-It will accompany [this future blog post](https://mikebridge.github.io/identityserver4-signalr/).
+It will accompany [this blog post](https://mikebridge.github.io/articles/identityserver4-signalr/).
 
 ### Prerequisites:
 
